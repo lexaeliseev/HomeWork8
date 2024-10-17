@@ -2,8 +2,8 @@ import pytest
 import csv
 
 
-"""Используем функциональный подход, выносим логику в отдельные функции или фикстуры"""
-
+"""Используем объектный подход в работе с данными"""
+"""Создана директория models с файлом users (class Users)"""
 
 @pytest.fixture
 def users():
@@ -18,7 +18,7 @@ def workers(users):
     """Берем только работников из списка пользователей"""
     workers_value = [user for user in users if user["status"] == "worker"]
     return workers_value
-    # Аналогично выше написанному созданию листа
+    # Аналогично выше написанному
     # workers = []
     # for user in users:
     #     if user["status"] == "worker":
