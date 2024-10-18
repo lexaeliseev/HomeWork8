@@ -20,8 +20,8 @@ def users() -> list[User]:
 @pytest.fixture()
 def workers(users) -> list[User]:
     """Берем только работников из списка пользователей"""
-    workers_value = [user for user in users if user.status == "worker"]
-    return workers_value
+    workers = [user for user in users if user.status == "worker"]
+    return workers
     # Аналогично выше написанному
     # workers = []
     # for user in users:
@@ -30,7 +30,7 @@ def workers(users) -> list[User]:
     # return workers_value
 
 
-def test_workers_are_adult_v2(workers):
+def test_workers_are_adult_v2(workers: list[User]):
     """Тестируем, что все работники  старше 18 лет из csv файла"""
     for worker in workers:
         assert user_is_adult(worker), f"Worker {worker} младше 18 лет"
