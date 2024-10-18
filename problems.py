@@ -33,7 +33,7 @@ def workers(users) -> list[User]:
 def test_workers_are_adult_v2(workers):
     """Тестируем, что все работники  старше 18 лет из csv файла"""
     for worker in workers:
-        assert user_is_adult(worker), f"Worker {worker.name} младше 18 лет"
+        assert user_is_adult(worker), f"Worker {worker} младше 18 лет"
 
 
 def user_is_adult(user: User):
