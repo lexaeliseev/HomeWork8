@@ -19,20 +19,25 @@ class TestProducts:
 
     def test_product_check_quantity(self, product):
         # TODO напишите проверки на метод check_quantity
-        assert product.check_quantity(1) is True
-        assert product.check_quantity(1000) is True
-        assert product.check_quantity(1001) is False
+        assert product.check_quantity(1) is True, f"Ошибка! Количество товаров равно = {product.quantity}"
+        assert product.check_quantity(1000) is True, f"Ошибка! Количество товаров равно = {product.quantity}"
+        assert product.check_quantity(1001) is False, f"Ошибка! Количество товаров равно = {product.quantity}"
 
     def test_product_buy(self, product):
         # TODO напишите проверки на метод buy
-        product.buy(444)
-        assert product.quantity == 556
+        product.buy(100)
+        assert product.quantity == 900, f"Ошибка! Количество товаров равно = {product.quantity}"
 
-#     def test_product_buy_more_than_available(self, product):
-#         # TODO напишите проверки на метод buy,
-#         #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
-#         pass
-#
+        product.buy(200)
+        assert product.quantity == 700, f"Ошибка! Количество товаров равно = {product.quantity}"
+
+    def test_product_buy_more_than_available(self, product):
+        # TODO напишите проверки на метод buy,
+        #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
+        with pytest.raises(ValueError, match='Не хватает товаров на складе!'):
+            product.buy(1001)
+
+
 #
 # class TestCart:
 #     """
