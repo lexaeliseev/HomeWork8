@@ -31,6 +31,9 @@ class TestProducts:
         product.buy(200)
         assert product.quantity == 700, f"Ошибка! Количество товаров равно = {product.quantity}"
 
+        product.buy(700)
+        assert product.quantity == 0, f"Ошибка! Количество товаров равно = {product.quantity}"
+
     def test_product_buy_more_than_available(self, product):
         # TODO напишите проверки на метод buy,
         #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
