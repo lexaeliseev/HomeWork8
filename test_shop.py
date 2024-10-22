@@ -20,7 +20,9 @@ class TestProducts:
     def test_product_check_quantity(self, product):
         # TODO напишите проверки на метод check_quantity
         assert product.check_quantity(1) is True, f"Ошибка! Количество товаров равно = {product.quantity}"
+
         assert product.check_quantity(1000) is True, f"Ошибка! Количество товаров равно = {product.quantity}"
+
         assert product.check_quantity(1001) is False, f"Ошибка! Количество товаров равно = {product.quantity}"
 
     def test_product_buy(self, product):
@@ -41,11 +43,29 @@ class TestProducts:
             product.buy(1001)
 
 
-#
-# class TestCart:
-#     """
-#     TODO Напишите тесты на методы класса Cart
-#         На каждый метод у вас должен получиться отдельный тест
-#         На некоторые методы у вас может быть несколько тестов.
-#         Например, негативные тесты, ожидающие ошибку (используйте pytest.raises, чтобы проверить это)
-#     """
+
+class TestCart:
+    """
+    TODO Напишите тесты на методы класса Cart
+        На каждый метод у вас должен получиться отдельный тест
+        На некоторые методы у вас может быть несколько тестов.
+        Например, негативные тесты, ожидающие ошибку (используйте pytest.raises, чтобы проверить это)
+    """
+    def test_add_product(self):
+        pass
+
+
+    def test_remove_product(self):
+        pass
+
+
+    def test_clear(self):
+        pass
+
+
+    def test_get_total_price(self):
+        pass
+
+
+    def test_buy(self):
+        pass
